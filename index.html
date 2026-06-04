@@ -1,83 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Vault63, Incorporation.</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Background Video-->
-        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="assets/mp4/bg.mp4" type="video/mp4" /></video>
-        <!-- Masthead-->
-        <div class="masthead">
-            <div class="masthead-content text-white">
-                <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4"><b>Vault63, Inc.</b></h1>
-                    <p class="mb-5">Vault63 offers to develop applications exclusive for companies seeking to move their activities to mobile platforms, with suitable project designing by preparing an analysis of audience and history.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault63, Inc. — iOS & macOS Apps</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Apple-like smooth scrolling */
+        html { scroll-behavior: smooth; }
 
-                    <p class="mb-5">If you need support about our apps or want to give feedbacks, please don't hesitate to contact us via <a href="mailto:dev@vault63.com">dev[at]vault63.com</a></p>
-                    <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p>
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
-                        <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
-                        </div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3 mt-2">
-                                <div class="fw-bolder">Form submission successful!</div>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
-                    </form>
+        /* Carousel animation styles */
+        .carousel-item {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .carousel-item.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+
+    <!-- Navigation (Dark Mode Optimized) -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-zinc-950/80 border-b border-zinc-800/60">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight text-white">Vault63, Inc.</span>
+            <div class="space-x-6 text-sm font-medium text-zinc-400">
+                <a href="#apps" class="hover:text-white transition">Apps</a>
+                <a href="#support" class="hover:text-white transition">Support</a>
+                <a href="#privacy" class="hover:text-white transition">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Fixed Carousel Layout -->
+    <header class="relative bg-zinc-950 overflow-hidden min-h-[400px] flex items-center justify-center border-b border-zinc-900">
+        <!-- Code-themed Background Carousel -->
+        <div id="code-carousel" class="absolute inset-0 z-0">
+            <!-- Slide 1: Dark Code -->
+            <div class="carousel-item active absolute inset-0 bg-zinc-950">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1600&auto=format&fit=crop"
+                     alt="Dark Mode Code Editor"
+                     class="w-full h-full object-cover blur-xs opacity-30">
+            </div>
+            <!-- Slide 2: Light/Tech Code -->
+            <div class="carousel-item absolute inset-0 bg-zinc-950">
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1600&auto=format&fit=crop"
+                     alt="Light Mode Code Editor"
+                     class="w-full h-full object-cover blur-xs opacity-20">
+            </div>
+            <!-- Slide 3: Terminal -->
+            <div class="carousel-item absolute inset-0 bg-zinc-950">
+                <img src="https://images.unsplash.com/photo-1629654297299-c85062111511?q=80&w=1600&auto=format&fit=crop"
+                     alt="Terminal Interface"
+                     class="w-full h-full object-cover blur-xs opacity-30">
+            </div>
+        </div>
+
+        <!-- Dark Gradient Overlay for Maximum Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-zinc-950 z-10"></div>
+
+        <!-- Content Layer -->
+        <div class="relative z-20 max-w-5xl mx-auto px-6 py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 drop-shadow-lg">
+                Crafting Premium Experiences <br class="hidden md:inline">for iOS & macOS
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+                We build beautiful, powerful, and native applications designed natively for Apple ecosystems.
+            </p>
+        </div>
+    </header>
+
+    <!-- Applications Section (Dark Grid Layout) -->
+    <section id="apps" class="max-w-5xl mx-auto px-6 py-16">
+        <h2 class="text-2xl font-bold mb-8 text-zinc-100">Our Applications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Valorant Guide Card -->
+            <div class="bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800/80 flex gap-4 items-start">
+                <div class="w-16 h-16 bg-red-600 rounded-2xl flex-shrink-0 flex items-center justify-center text-white font-bold text-xl shadow-inner">
+                    VLR
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Guide for Valorant</h3>
+                    <p class="text-zinc-400 text-sm mt-1 mb-4 leading-relaxed">
+                        Your ultimate tactical companion for Valorant. Master every agent's abilities, discover precise lineup guides with interactive maps, and track the real-time weapon meta to elevate your competitive gameplay.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full">iOS</span>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full ml-1">macOS Compatible</span>
+                </div>
+            </div>
+
+            <!-- PUBG Guide Card -->
+            <div class="bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800/80 flex gap-4 items-start">
+                <div class="w-16 h-16 bg-amber-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-white font-bold text-xl shadow-inner">
+                    PBG
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Guide for PUBG</h3>
+                    <p class="text-zinc-400 text-sm mt-1 mb-4 leading-relaxed">
+                        A comprehensive survival utility for PUBG players. Analyze detailed weapon stats, recoil patterns, and loot drop probabilities. Explore high-resolution maps to plan your drop zones and rotating strategies perfectly.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full">iOS</span>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full ml-1">macOS Compatible</span>
+                </div>
+            </div>
+
+            <!-- Diablo 4 Guide Card -->
+            <div class="bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800/80 flex gap-4 items-start">
+                <div class="w-16 h-16 bg-red-950 rounded-2xl flex-shrink-0 flex items-center justify-center text-red-500 font-bold text-xl shadow-inner border border-red-900/40">
+                    D4
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Guide for Diablo 4</h3>
+                    <p class="text-zinc-400 text-sm mt-1 mb-4 leading-relaxed">
+                        Your essential companion through Sanctuary. Explore comprehensive character build planners, skill tree calculators, and item databases. Track world bosses, Helltide events, and optimal dungeon farming routes in real time.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full">iOS</span>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full ml-1">macOS Compatible</span>
+                </div>
+            </div>
+
+            <!-- Genshin Impact Guide Card -->
+            <div class="bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800/80 flex gap-4 items-start">
+                <div class="w-16 h-16 bg-sky-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-white font-bold text-xl shadow-inner">
+                    GNS
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Guide for Genshin Impact</h3>
+                    <p class="text-zinc-400 text-sm mt-1 mb-4 leading-relaxed">
+                        An all-in-one companion utility for travelers across Teyvat. Access up-to-date character ascension materials, weapon databases, and artifact synergy guides. Plan your daily resin usage and track farming schedules efficiently.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full">iOS</span>
+                    <span class="inline-flex items-center text-xs font-medium bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-full ml-1">macOS Compatible</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Support Section (Dark Mode) -->
+    <section id="support" class="bg-zinc-900 border-t border-b border-zinc-800/80 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="md:flex md:justify-between md:items-center">
+                <div class="max-w-xl mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Contact Support</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Have questions, feature requests, or need technical assistance with our apps? We are here to help you. Drop us an email and we'll get back to you as soon as possible.
+                    </p>
+                </div>
+                <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800 inline-block min-w-[280px] shadow-inner">
+                    <p class="text-xs uppercase font-semibold text-zinc-500 tracking-wider mb-1">Support Email</p>
+                    <a href="mailto:dev@vault63.com" class="text-lg font-medium text-white hover:text-zinc-300 hover:underline break-all">
+                        dev@vault63.com
+                    </a>
+                    <p class="text-xs text-zinc-500 mt-3">Average response time: Within 24 hours</p>
                 </div>
             </div>
         </div>
-        <!-- Social Icons-->
-        <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-        <div class="social-icons">
-            <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
-            </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="max-w-5xl mx-auto px-6 py-16">
+        <h2 class="text-2xl font-bold mb-4 text-zinc-100">Privacy Policy</h2>
+        <div class="max-w-none text-zinc-400 leading-relaxed space-y-4 text-sm">
+            <p>
+                At <strong>Vault63, Inc.</strong>, we take your privacy seriously. Our applications are built with user data protection as a core principle.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Data Collection:</strong> Most of our apps operate fully offline or store data locally using native Apple frameworks (CoreData/CloudKit). We do not collect or sell your personal data.</li>
+                <li><strong>Third-Party Services:</strong> If any third-party frameworks (like telemetry or crash reporting) are utilized, data is anonymized and used solely to improve performance.</li>
+                <li><strong>Updates:</strong> This policy may change over time, but the core principle of respecting your data will remain.</li>
+            </ul>
+            <p class="text-xs text-zinc-500 pt-4">Last Updated: June 2026</p>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-zinc-500 py-8 border-t border-zinc-900">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col items-center md:items-start text-sm gap-2">
+            <p class="text-zinc-400">&copy; 2026 Vault63, Inc. All rights reserved.</p>
+            <p class="text-xs text-zinc-600">Apple, iOS, macOS, and App Store are trademarks of Apple Inc.</p>
+            <p class="text-xs text-zinc-600 mt-2 text-center md:text-left leading-relaxed">
+                Disclaimer: "Guide for Valorant", "Guide for PUBG", "Guide for Diablo 4", and "Guide for Genshin Impact" are unofficial companion applications. They are not endorsed, affiliated, or associated with Riot Games, Krafton, Blizzard Entertainment, HoYoverse, or their respective partners. All in-game assets, imagery, and trademarks belong to their respective owners.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('code-carousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+            let currentItemIndex = 0;
+            const intervalTime = 4000; // 4 seconds per slide
+
+            function advanceCarousel() {
+                items[currentItemIndex].classList.remove('active');
+                currentItemIndex = (currentItemIndex + 1) % items.length;
+                items[currentItemIndex].classList.add('active');
+            }
+
+            setInterval(advanceCarousel, intervalTime);
+        });
+    </script>
+
+</body>
 </html>
